@@ -11,28 +11,33 @@ class NaiveBayesClassificator : Classificator()
 {
     lateinit var table: Array<MutableList<String?>>
     val categories = HashMap<String, Int>()
-    var tableMap = HashMap<String, HashMap<String, Int>>()
+    var tableMap = HashMap<String, TreeMap<String, Int>>()
     var totalFiles = 0
 
-    override fun train(trainSet: HashMap<File, HashMap<String, Int>>) {
-        super.train(trainSet)
+    override fun saveModel(s: String) {
+        TODO("implement")
+    }
+
+    override fun train(trainSet: HashMap<File, TreeMap<String, Int>>) {
 
         totalFiles = trainSet.size
         table = Array<MutableList<String?>>(trainSet.size){ArrayList()}
 
+        selector.filterByDocuments(trainSet)
         trainSet.forEach { file, hashMap ->
 
             val category = getCategoryFromName(file.name)
             hashMap.forEach { s, count ->
-                tableMap.put(category, tableMap[category] ?: HashMap())
+                tableMap.put(category, tableMap[category] ?: TreeMap())
                 tableMap[category]!!.add(s)
             }
 
             categories.add(category)
         }
+        selector.filterByClass(tableMap)
     }
 
-    override fun calculate(hashMap: HashMap<String, Int>): Pair<String, Double> {
+    override fun calculate(hashMap: TreeMap<String, Int>): Pair<String, Double> {
         val chances = HashMap<String,Double>()
 
         hashMap.forEach { world, `_` ->
@@ -55,9 +60,5 @@ class NaiveBayesClassificator : Classificator()
 
         return Pair(cat, pct)
     }
-}
-
-private fun HashMap<String, Int>.add(world: String) {
-    this.put(world, (this[world]?:0) + 1)
 }
 

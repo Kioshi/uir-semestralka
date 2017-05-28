@@ -19,29 +19,9 @@ abstract class Classificator {
     }
 
 
-    open fun train(trainSet: HashMap<File, HashMap<String, Int>>)
-    {
-        selector.filterByDocuments(trainSet)
-        trainSet.forEach { file, hashMap ->
-            val kategory = getCategoryFromName(file.name)
-            if (kategory.isEmpty())
-                return@forEach
+    abstract fun train(trainSet: HashMap<File, TreeMap<String, Int>>)
 
-            if (data[kategory] == null)
-            {
-                data.put(kategory, hashMap)
-            }
-            else
-            {
-                hashMap.forEach { key, value ->
-                    data[kategory]!!.put(key, (data[kategory]!![key] ?: 0) + value)
-                }
-            }
-        }
-        selector.filterByClass(data)
-    }
-
-    fun test(testSet: HashMap<File, HashMap<String, Int>>) {
+    fun test(testSet: HashMap<File, TreeMap<String, Int>>) {
         var fail = 0
         var total = 0
         testSet.forEach { file, hashMap ->
@@ -55,7 +35,7 @@ abstract class Classificator {
         println("Total $total Correct ${total-fail} Missplaced $fail")
     }
 
-    abstract fun calculate(hashMap: HashMap<String, Int>): Pair<String, Double>
+    abstract fun calculate(hashMap: TreeMap<String, Int>): Pair<String, Double>
 
 
     fun getCategoryFromName(name: String): String
@@ -71,25 +51,27 @@ abstract class Classificator {
             return matcher.group(1)
     }
 
-    fun saveModel(s: String) {
-        File(s).printWriter().use { out ->
-
-            data.forEach { kategory, hashMap ->
-                out.print("$kategory -")
-                hashMap.forEach { s, i -> out.print(" $s $i") }
-                out.println()
-            }
-        }
-    }
-
-    val data = HashMap<String, HashMap<String, Int>>()
-
+    abstract fun saveModel(s: String)
 }
 
 fun getClassificator(name: String) : Classificator
 {
     when(name) {
-        "nb" -> return NaiveBayesClassificator()
-        else -> return ExperimentalClassificator()
+        "nb" -> {
+            println("Naive-Bayes classificator selected...")
+            return NaiveBayesClassificator()
+        }
+        else -> {
+            println("1-nn classificator selected...")
+            return oneNNClasificator()
+        }
     }
+}
+
+
+fun HashMap<String, Int>.add(world: String, value: Int = 1) {
+    this.put(world, (this[world]?:0) + value)
+}
+fun TreeMap<String, Int>.add(world: String, value: Int = 1) {
+    this.put(world, (this[world]?:0) + value)
 }

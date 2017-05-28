@@ -27,22 +27,26 @@ fun startGUI(args: Array<String>) {
 }
 
 fun learn(args: Array<String>) {
+    println("Loading...")
     val trainSet = loadFiles(args[0])
     val testSet = loadFiles(args[1])
     val selector = getSelector(args[2])
     val classificator = getClassificator(args[3])
 
     classificator.addSelector(selector)
+    println("Training...")
     classificator.train(trainSet)
+    println("Testing...")
     classificator.test(testSet)
+    println("Saving...")
     classificator.saveModel(args[4])
 }
 
-fun loadFiles(dir: String): HashMap<File, HashMap<String, Int>> {
+fun loadFiles(dir: String): HashMap<File, TreeMap<String, Int>> {
     val folder = File(dir)
     val listOfFiles = folder.listFiles()
 
-    val tokenizedFiles = HashMap<File,HashMap<String,Int>>()
+    val tokenizedFiles = HashMap<File,TreeMap<String,Int>>()
 
     listOfFiles.forEach {
         val sb = StringBuilder()
@@ -57,7 +61,7 @@ fun loadFiles(dir: String): HashMap<File, HashMap<String, Int>> {
         prepared = prepared.replace(Regex("\\s+")," ")
 
         val tokens = prepared.toLowerCase().split(" ")
-        val map = HashMap<String, Int>()
+        val map = TreeMap<String, Int>()
         tokens.forEach { string ->
             if(string.isNotEmpty())
                 map.put(string, (map[string] ?: 0) + 1)
