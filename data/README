@@ -1,0 +1,30 @@
+=================================================================
+               Czech Text Document Corpus v 1.0
+=================================================================
+
+BASIC INFORMATION
+--------------------
+Czech Text Document Corpus v 1.0 contains 11.995 Czech newspaper articles provided by the Czech News Agency (CTK, http://www.ctk.eu/). The articles are annotated by the labels selected from the 60 categories.
+
+This corpus is available only for research purposes for free. Commercial use in any form is strictly excluded. 
+
+For further information about the corpus, you can see the attached paper below:
+
+@inproceedings{hrala2013evaluation,
+  title={Evaluation of the Document Classification Approaches},
+  author={Hrala, Michal and Kr{\'a}l, Pavel},
+  booktitle={Proceedings of the 8th International Conference on Computer Recognition Systems CORES 2013},
+  pages={877--885},
+  year={2013},
+  organization={Springer}
+}
+
+Please, cite this paper when you used these texts in the experiments.
+
+AUTHORS
+------------------------
+
+- Michal Hrala
+- Pavel Kral pkral(at)kiv.zcu.cz
+
+Date: August 20, 2013
