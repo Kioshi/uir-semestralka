@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edb7bf5d-8f6c-4e97-8323-64926f87cfdd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UIR-senestralka.jar" afterPath="$PROJECT_DIR$/UIR-senestralka.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/UIR_senestralka_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/UIR_senestralka_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/semestralka/Main.kt" afterPath="$PROJECT_DIR$/src/semestralka/Main.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/semestralka/Utils.kt" afterPath="$PROJECT_DIR$/src/semestralka/Utils.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/semestralka/classificators/Classificator.kt" afterPath="$PROJECT_DIR$/src/semestralka/classificators/Classificator.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/semestralka/classificators/NaiveBayesClassificator.kt" afterPath="$PROJECT_DIR$/src/semestralka/classificators/NaiveBayesClassificator.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/semestralka/classificators/oneNNClasificator.kt" afterPath="$PROJECT_DIR$/src/semestralka/classificators/oneNNClasificator.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,11 +18,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/semestralka/Main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="44" column="35" lean-forward="false" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+            <state relative-caret-position="650">
+              <caret line="66" column="26" lean-forward="true" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -49,17 +42,17 @@
         <entry file="file://$PROJECT_DIR$/src/semestralka/classificators/Classificator.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="188">
-              <caret line="66" column="22" lean-forward="false" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+              <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NaiveBayesClassificator.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NaiveBayesClassificator.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/semestralka/classificators/NaiveBayesClassificator.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="97" column="9" lean-forward="false" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="9" />
+            <state relative-caret-position="188">
+              <caret line="54" column="33" lean-forward="false" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
               <folding>
                 <element signature="e#36#131#0" expanded="true" />
               </folding>
@@ -121,9 +114,9 @@
         <option value="$PROJECT_DIR$/src/semestralka/symptoms/Selector.kt" />
         <option value="$PROJECT_DIR$/src/semestralka/Utils.kt" />
         <option value="$PROJECT_DIR$/src/semestralka/classificators/Classificator.kt" />
-        <option value="$PROJECT_DIR$/src/semestralka/classificators/NaiveBayesClassificator.kt" />
         <option value="$PROJECT_DIR$/src/semestralka/classificators/oneNNClasificator.kt" />
         <option value="$PROJECT_DIR$/src/semestralka/Main.kt" />
+        <option value="$PROJECT_DIR$/src/semestralka/classificators/NaiveBayesClassificator.kt" />
       </list>
     </option>
   </component>
@@ -704,14 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/semestralka/classificators/Classificator.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="66" column="22" lean-forward="false" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/semestralka/classificators/oneNNClasificator.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -722,21 +707,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/semestralka/classificators/NaiveBayesClassificator.kt">
+    <entry file="file://$PROJECT_DIR$/src/semestralka/Main.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="97" column="9" lean-forward="false" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="9" />
-          <folding>
-            <element signature="e#36#131#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="650">
+          <caret line="66" column="26" lean-forward="true" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/semestralka/Main.kt">
+    <entry file="file://$PROJECT_DIR$/src/semestralka/classificators/Classificator.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="44" column="35" lean-forward="false" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+        <state relative-caret-position="188">
+          <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/semestralka/classificators/NaiveBayesClassificator.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="54" column="33" lean-forward="false" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
+          <folding>
+            <element signature="e#36#131#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -7,7 +7,9 @@ import semestralka.symptoms.ClassFrequency
 import semestralka.symptoms.DocumentFrequency
 import semestralka.symptoms.KombinedSelector
 import semestralka.symptoms.Selector
+import java.io.BufferedReader
 import java.io.File
+import java.io.FileReader
 import java.util.*
 
 /**
@@ -56,11 +58,11 @@ object Utils {
 
     fun loadModel(path: String)
     {
-        val scanner = Scanner(File(path))
-        val selector = getSelector(scanner.nextLine())
-        classificator = getClassificator(scanner.nextLine())
+        val br = BufferedReader(FileReader(path))
+        val selector = getSelector(br.readLine())
+        classificator = getClassificator(br.readLine())
         classificator.addSelector(selector)
-        classificator.loadModel(scanner)
+        classificator.loadModel(br)
     }
 
     fun prepareText(str: String): TreeMap<String, Int>

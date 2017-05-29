@@ -52,7 +52,7 @@ class NaiveBayesClassificator : Classificator()
     override fun calculate(hashMap: TreeMap<String, Int>): Pair<String, Double> {
         val chances = HashMap<String,Double>()
 
-        hashMap.forEach { world, `_` ->
+        hashMap.forEach { world, _ ->
             categories.forEach iner@ { category, count ->
                 var chance = chances[category] ?: (count / totalFiles.toDouble())
                 chance *= (tableMap[category]!![world] ?: 1 ) / count.toDouble()
