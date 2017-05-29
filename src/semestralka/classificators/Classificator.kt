@@ -2,6 +2,7 @@ package semestralka.classificators
 
 import semestralka.Utils.prepareText
 import semestralka.symptoms.Selector
+import java.io.BufferedReader
 import java.io.File
 import java.io.PrintWriter
 import java.util.*
@@ -63,7 +64,7 @@ abstract class Classificator {
 
     abstract fun saveData(out: PrintWriter)
 
-    abstract fun loadModel(scanner: Scanner)
+    abstract fun loadModel(br: BufferedReader)
 
     fun getFullName(): String {
         when(toString()){

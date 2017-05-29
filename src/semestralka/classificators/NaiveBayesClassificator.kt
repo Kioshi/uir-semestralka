@@ -1,5 +1,6 @@
 package semestralka.classificators
 
+import java.io.BufferedReader
 import java.io.File
 import java.io.PrintWriter
 import java.util.*
@@ -76,24 +77,24 @@ class NaiveBayesClassificator : Classificator()
         return "nb"
     }
 
-    override fun loadModel(scanner: Scanner) {
-        var sc = Scanner(scanner.nextLine())
+    override fun loadModel(br: BufferedReader) {
+        val sc = Scanner(br.readLine())
         while(sc.hasNext())
             categories.put(sc.next(), sc.nextInt())
-        totalFiles = scanner.nextLine().toInt()
-        while(scanner.hasNextLine())
-        {
-            val line = scanner.nextLine()
-            sc = Scanner(line)
-            val category = sc.next()
-            sc.next()
+        totalFiles = br.readLine().toInt()
+
+
+        br.forEachLine { line ->
+            val tokens = line.split(" ")
+            val category = tokens[0]
+
             val map = TreeMap<String, Int>()
-            while(sc.hasNext())
+            for (i  in 2..(tokens.size-1) step 2)
             {
-                map.put(sc.next(), sc.nextInt())
+                map.put(tokens[i],tokens[i+1].toInt())
+
             }
             tableMap.put(category,map)
-
         }
     }
 }

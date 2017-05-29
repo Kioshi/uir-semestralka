@@ -36,15 +36,15 @@ fun main(args : Array<String>) {
     {
         println("Wrong arguments! ${ex.message}")
     }
-    catch (ex: Exception)
+    /*catch (ex: Exception)
     {
         println("Error: ${ex.message}")
-    }
+    }*/
 }
 
 fun startGUI(args: Array<String>) {
     loadModel(args[0])
-    Application.launch(App::class.java, args[0]);
+    Application.launch(App::class.java, args[0])
 }
 
 fun learn(args: Array<String>) {
